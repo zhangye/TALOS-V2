@@ -29,3 +29,14 @@ incremental_db/
 *.sof
 *.sld
 *.jdi
+
+# Vivado build artifacts
+build/
+.Xil/
+
+# Vivado-generated hex copies (duplicates of rtl/generated/)
+rtl/src/generated/
+rtl/src/include/generated/
+
+# Java crash dumps
+hs_err_pid*
