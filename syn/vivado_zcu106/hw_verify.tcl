@@ -91,6 +91,7 @@ if {[file exists ${FSBL_ELF}]} {
 }
 after 500
 
+catch {memmap -addr $BASE_ADDR -size 0x00001000 -flags 3}
 # ── Step 3: 寄存器验证 ──
 puts "\n--- Step 3: 寄存器验证 ---"
 

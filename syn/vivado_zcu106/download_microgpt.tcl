@@ -80,6 +80,7 @@ if {[file exists ${FSBL_ELF}]} {
 puts "\n--- Verifying bitstream ---"
 after 200
 set magic_val ""
+catch {memmap -addr 0xA0000000 -size 0x00001000 -flags 3}
 catch {set magic_val [mrd -value 0xA0000000]}
 if {${magic_val} == "0x4d475254" || ${magic_val} == "0x4D475254"} {
     puts "  MAGIC = ${magic_val} -- PASS (bitstream verified)"
